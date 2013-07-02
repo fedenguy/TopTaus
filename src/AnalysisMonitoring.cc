@@ -60,6 +60,11 @@ void AnalysisMonitoring::buildTrees(TFile* f){
   
   // tau R
   branchNames.push_back("rc_t");
+
+  // transverse masses
+  branchNames.push_back("mt_min");
+  branchNames.push_back("mt_max");
+
   //add  weights for MVA (w+jet)
   //add  weights for MVA (qcd multijets)
   //add  average MVA

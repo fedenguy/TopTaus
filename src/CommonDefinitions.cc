@@ -7,8 +7,7 @@
 
 namespace commondefinitions{
   
-  //double LUM_ERR            = 0.045; // check it 
-  double LUM_ERR            = 0.022;
+  double LUM_ERR            = 0.044; // ICHEP 2012 https://twiki.cern.ch/twiki/bin/view/CMS/TWikiLUM
   
   double TAU_ID_ERR         = 0.06;  
   
@@ -101,7 +100,20 @@ namespace commondefinitions{
   
   */
   
+
+  // BR(H->tauNu) for the heavy tbh samples (from 180 to 300 GeV/c^2)
+  std::vector<double> brHtaunu_; 
+  std::vector<double> brHtb_;
   
+//  double ftbh[] ={ // Selection  mu==200&&Xt==2000&&m2==200&&tanb==5
+//    0.831852,
+//    0.407966,
+//    0.228564,
+//    0.106446,
+//    0.04129783,
+//    0.02514242
+//  };
+    
   
   
   //RUNNING CONDITIONS ////////////////////////////////////////////////

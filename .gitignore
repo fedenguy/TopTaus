@@ -15,3 +15,8 @@ scripts/lip-batch/*.sh.o*
 # no plots directory, nor files inside it
 plots
 plots/
+# no datacards and shapes directory, no files inside them
+datacards
+datacards/
+shapes
+shapes/

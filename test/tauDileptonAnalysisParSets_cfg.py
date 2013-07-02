@@ -9,7 +9,8 @@ LandSShapesProducerParSet = cms.PSet(
     outFolder        = cms.string("shapes/"),
     #    outFolder        = cms.string("testMultiDimensionalShapes/"),
     outputFileName  = cms.string("shapes"),
-    massPointName   = cms.vstring("m180", "m190", "m200", "m220", "m250", "m300"),
+#    massPointName   = cms.vstring("m180", "m190", "m200", "m220", "m250", "m300"),
+    massPointName   = cms.vstring("m250"),
 
     
     #    baseMCDir        = cms.string("/lustre/data3/cmslocal/vischia/tau_dilepton/outputFiles444_3/mt-2011-V1-mc-MU-20GeV/"),
@@ -28,7 +29,7 @@ LandSShapesProducerParSet = cms.PSet(
     
     # obsolete format # for fig7 #    mcBkgFileName      = cms.vstring(    "out-ttbar_mutau.root", "out-ttbar_other.root", "out-singletop.root",  "out-wjets.root"  , "out-dibosons.root", "out-zjets.root"    ),
     #    inputFileName      = cms.vstring( "out-data.root", "out-wh-pythia-", "out-hh-pythia-", "out-data_rescaled.root", "out-ttbar_mutau.root", "out-ttbar_mcbkg.root", "out-singletop.root", "out-dibosons.root" ),
-    inputFileName      = cms.vstring( "out-data.root", "out-tbh-pythia-", "out-data_rescaled.root", "out-ttbar_mutau.root", "out-ttbar_mcbkg.root", "out-singletop.root", "out-dibosons.root" ),
+    inputFileName      = cms.vstring( "out-data.root", "out-heavyHiggs-pythia-", "out-data_rescaled.root", "out-ttbar_mutau.root", "out-ttbar_mcbkg.root", "out-singletop.root", "out-dibosons.root" ),
         # is it *really* needed that "3" that was told it is necessary in the lands framework?
     #    sampleName      = cms.vstring( "data_obs", "WH3", "HH3", "tau_fake3", "tt_ltau3", "tt_ll3", "singleTop3","di_boson3", "Z_tautau3",  "Z_eemumu3" ),
     sampleName      = cms.vstring( "data_obs", "TBH", "tau_fake", "tt_ltau", "tt_ll", "singleTop","di_boson", "Z_tautau",  "Z_eemumu" ),
@@ -36,7 +37,7 @@ LandSShapesProducerParSet = cms.PSet(
     fancySampleName      = cms.vstring("data", "H^{+}[m_{H^{#pm}} = 250 GeV]", "misidentified #tau_{h}", "t#bar{t} #rightarrow #mu#tau_{h}", "other t#bar{t}", "Single t", "Diboson","Z #rightarrow #tau#tau", "Z #rightarrow ee,#mu#mu"),
     
     # obsolete format # for fig 7 #    mcBkgSampleColor    = cms.vint32( 614, 8, 824, 809,  596, 831, 831, 835 ),
-    sampleColour    = cms.vint32( 1,    1, 799,  614,    8,   824,  596, 831, 809),
+    sampleColour    = cms.vint32( 1,  1, 799,  614,    8,   824,  596, 831, 809),
     #sampleColour    = cms.vint32( 1,  616, 799, 614, 8, 824,  596, 831, 809),
     sampleFillStyle = cms.vint32( 1001, 0, 1001, 1001, 1001,  1001, 1001, 1001, 1001),
     
@@ -71,7 +72,7 @@ LandSShapesProducerParSet = cms.PSet(
     
     #osCutEff               = cms.double(0.69*220.92/242.915), #    osCutEff               = cms.double(0.577749097), #223.82/387.4),
 #    osCutEff               = cms.double(2054.99/4232.500009), #FIXME: subtract residual shape 0.699), # // FIXME: fixme 220.92/242.915), #    osCutEff               = cms.double(0.577749097), #223.82/387.4),
-    osCutEff = cms.double( 2821.13/5736.58),
+    osCutEff = cms.double( 2810.89/5736.58),
     #fitType     = cms.vstring( HIGGS2BKG, HIGGS3BKG, SM2BKG, SM3BKG)
     #    fitType     = cms.vint32( 0),
     #, 2, 3, 0),
@@ -83,24 +84,24 @@ LandSShapesProducerParSet = cms.PSet(
 
 
 
-#    vars        = cms.vstring( "rc_t"    ),
-#    mins        = cms.vdouble(   -0.099  ),
-#    maxs        = cms.vdouble(    1.001  ),
-#    bins        = cms.vint32(      11     ),
-#    hmin        = cms.vdouble(      0    ),
-#    hmax        = cms.vdouble(    200    ),
-#    unbinned    = cms.vint32(       0    ),
-#    smoothOrder = cms.vint32(       3    ),   
+    vars        = cms.vstring( "rc_t"    ),
+    mins        = cms.vdouble(   -0.099  ),
+    maxs        = cms.vdouble(    1.001  ),
+    bins        = cms.vint32(      11     ),
+    hmin        = cms.vdouble(      0    ),
+    hmax        = cms.vdouble(    200    ),
+    unbinned    = cms.vint32(       0    ),
+    smoothOrder = cms.vint32(       3    ),   
 
 
-vars        = cms.vstring(    "pt_t"  ),
-mins        = cms.vdouble(         0  ),
-maxs        = cms.vdouble(       500  ),
-bins        = cms.vint32(         20  ),
-hmin        = cms.vdouble(         0  ),
-hmax        = cms.vdouble(       200  ),
-unbinned    = cms.vint32(          0  ),
-smoothOrder = cms.vint32(          3  ),
+# vars        = cms.vstring(    "pt_t"  ),
+# mins        = cms.vdouble(         0  ),
+# maxs        = cms.vdouble(       500  ),
+# bins        = cms.vint32(         20  ),
+# hmin        = cms.vdouble(         0  ),
+# hmax        = cms.vdouble(       200  ),
+# unbinned    = cms.vint32(          0  ),
+# smoothOrder = cms.vint32(          3  ),
 
 
 

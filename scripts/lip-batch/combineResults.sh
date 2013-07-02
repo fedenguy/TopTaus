@@ -59,8 +59,22 @@ if [ "${2}" = "hadd" ]; then
     #hadd -f $DATAPLACE/out-higgs-pythia-m160.root $DATAPLACE/out-hh-pythia-m160.root $DATAPLACE/out-wh-pythia-m160.root
     #hadd -f $DATAPLACE/out-higgs-pythia-m160_mutau.root $DATAPLACE/out-hh-pythia-m160_mutau.root $DATAPLACE/out-wh-pythia-m160_mutau.root
 
-    DATAPLACE="${1}/nomt-2012-V1-data-MU-20GeV/"
+    #hadd -f $DATAPLACE/out-heavyHiggs-pythia-m180.root $DATAPLACE/out-tbh-pythia-m180.root $DATAPLACE/out-htb-pythia-m180.root
+    #hadd -f $DATAPLACE/out-heavyHiggs-pythia-m190.root $DATAPLACE/out-tbh-pythia-m190.root $DATAPLACE/out-htb-pythia-m190.root
+    #hadd -f $DATAPLACE/out-heavyHiggs-pythia-m200.root $DATAPLACE/out-tbh-pythia-m200.root $DATAPLACE/out-htb-pythia-m200.root
+    #hadd -f $DATAPLACE/out-heavyHiggs-pythia-m220.root $DATAPLACE/out-tbh-pythia-m220.root $DATAPLACE/out-htb-pythia-m220.root
+    #hadd -f $DATAPLACE/out-heavyHiggs-pythia-m250.root $DATAPLACE/out-tbh-pythia-m250.root $DATAPLACE/out-htb-pythia-m250.root
+    #hadd -f $DATAPLACE/out-heavyHiggs-pythia-m300.root $DATAPLACE/out-tbh-pythia-m300.root $DATAPLACE/out-htb-pythia-m300.root
 
+    cp  $DATAPLACE/out-tbh-pythia-m180.root $DATAPLACE/out-heavyHiggs-pythia-m180.root
+    cp  $DATAPLACE/out-tbh-pythia-m190.root $DATAPLACE/out-heavyHiggs-pythia-m190.root
+    cp  $DATAPLACE/out-tbh-pythia-m200.root $DATAPLACE/out-heavyHiggs-pythia-m200.root
+    cp  $DATAPLACE/out-tbh-pythia-m220.root $DATAPLACE/out-heavyHiggs-pythia-m220.root
+    hadd -f $DATAPLACE/out-heavyHiggs-pythia-m250.root $DATAPLACE/out-tbh-pythia-m250.root $DATAPLACE/out-htb-pythia-m250.root
+    cp  $DATAPLACE/out-tbh-pythia-m300.root $DATAPLACE/out-heavyHiggs-pythia-m300.root 
+    
+    DATAPLACE="${1}/nomt-2012-V1-data-MU-20GeV/"
+    
      #DATAPLACE="/lustre/data3/cmslocal/vischia/tau_dilepton/outputFiles444_3/mt-2011-V1-data-MU-20GeV/"
 
     cd $DATAPLACE

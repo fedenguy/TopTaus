@@ -4,17 +4,17 @@
 
   <!-- W transverse mass distribition (After MT cut)  -->
   <id tag="muCh_adphi_lm" doratio="1" logy="1" cmspublic="y"  oflow="0" uflow="0" title="" ytitle="Events / 5 GeV/c" xtitle="|#Delta#phi^{lep-met}|"
-   yrange="10,1000" xrange="0,4" xbin="4" >
+   yrange="0.1,1000" xrange="0,4" xbin="4" >
     <item dir="PFlow/RecoSteps/lep_tau/OS">Dphi_lepton_met_8</item>
   </id> 
 
   <id tag="muCh_adphi_tm" doratio="1" logy="1" cmspublic="y"  oflow="0" uflow="0" title="" ytitle="Events / 5 GeV/c" xtitle="|#Delta#phi^{tau-met}|"
-   yrange="10,1000" xrange="0,4" xbin="4" >
+   yrange="0.1,1000" xrange="0,4" xbin="4" >
     <item dir="PFlow/RecoSteps/lep_tau/OS">Dphi_tau_met_8</item>
   </id> 
 
   <id tag="muCh_dphi_lm" doratio="1" logy="1" cmspublic="y"  oflow="0" uflow="0" title="" ytitle="Events / 5 GeV/c" xtitle="#Delta#phi^{lep-met}"
-   yrange="10,10000" xrange="-4,4" xbin="4" >
+   yrange="0.1,10000" xrange="-4,4" xbin="4" >
     <item dir="PFlow/RecoSteps/lep_tau/OS">w_mass_deltaphi_8</item>
   </id> 
 
@@ -30,7 +30,7 @@
     <item dir="PFlow/RecoSteps/lep_tau/OS">w_mass_max_8</item>
   </id> 
 
-  <id tag="muCh_mt_min" doratio="1" logy="1" cmspublic="y"  oflow="1" uflow="0" title="" ytitle="Events / 5 GeV/c" xtitle="min(M^{lep-met}_{T},M^{tau-met}_{T}) [GeV/c^{2}]" yrange="0.1,6000" xbin="32" >
+  <id tag="muCh_mt_min" doratio="1" logy="1" cmspublic="y"  oflow="1" uflow="0" title="" ytitle="Events / 5 GeV/c" xtitle="min(M^{lep-met}_{T},M^{tau-met}_{T}) [GeV/c^{2}]" yrange="0.1,6000" xbin="32" xrange="0,300">
     <item dir="PFlow/RecoSteps/lep_tau/OS">w_mass_min_8</item>
   </id> 
 

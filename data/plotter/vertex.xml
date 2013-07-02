@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monitor> 
 
-  <id tag="muon_vertex" doratio="1" logy="1" cmspublic="y" opt="e1" oflow="0" uflow="0" title="" ytitle="Events" xtitle="vertices" yrange="10,1000000" >
+  <id tag="muon_vertex" doratio="1" logy="1" cmspublic="y" opt="e1" oflow="0" uflow="0" title="" ytitle="Events" xtitle="vertices" yrange="0.1,1000000" >
     <item dir="PFlow/RecoSteps/lep_tau/#geq 3 jet">vertex_4</item>
   </id>
 
-  <id tag="muon_vertex_unweighted" doratio="1" logy="1" cmspublic="y" opt="e1" oflow="0" uflow="0" title="" ytitle="Events" xtitle="#eta^{#mu}" yrange="10,1000000"  xtitle="vertices" >
+  <id tag="muon_vertex_unweighted" doratio="1" logy="1" cmspublic="y" opt="e1" oflow="0" uflow="0" title="" ytitle="Events" xtitle="#eta^{#mu}" yrange="0.1,1000000"  xtitle="vertices" >
     <item dir="PFlow/RecoSteps/lep_tau/#geq 3 jet">vertexUnweighted_4</item>
   </id>
 

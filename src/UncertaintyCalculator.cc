@@ -130,7 +130,8 @@ void UncertaintyCalculator::doPropagations( vector<double> & jerFactors, const d
       if(jer== 0) newJets.push_back( smearedJet(origJet, origJet[34], 0/* 0=genpt, 1=random */, 0 /* 0=base, 1=jerup, 2=jerdown*/, corr_jer) );
       if(jer> 0)  newJets.push_back( smearedJet(origJet, origJet[34], 0/* 0=genpt, 1=random */, 1 /* 0=base, 1=jerup, 2=jerdown*/, corr_jer) );
       if(jer< 0)  newJets.push_back( smearedJet(origJet, origJet[34], 0/* 0=genpt, 1=random */, 2 /* 0=base, 1=jerup, 2=jerdown*/, corr_jer) );
-      jerFactors.push_back(corr_jer);
+      //      jerFactors.push_back(corr_jer); // Fuck. Output are already rescaled jets. So push back 1
+      jerFactors.push_back(1.);
       
       jetDiff += (newJets[ijet]-vJ[ijet]);
     }

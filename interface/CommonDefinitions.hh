@@ -94,6 +94,8 @@ namespace commondefinitions{
   
   */
   
+  extern std::vector<double> brHtaunu_; // BR(H->taunu)
+  extern std::vector<double> brHtb_; // BR(H->tb)
   
   enum puconditions{ NOPU, PUPLUS, PUMINUS };
   
@@ -252,7 +254,14 @@ namespace commondefinitions{
    TBH200_URL,  
    TBH220_URL, 
    TBH250_URL,
-   TBH300_URL
+   TBH300_URL,
+   
+   HTB180_URL,  
+   HTB190_URL,  
+   HTB200_URL,  
+   HTB220_URL, 
+   HTB250_URL,
+   HTB300_URL
   };
 
   

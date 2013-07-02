@@ -71,13 +71,17 @@
      <file weight="0.05">nomt-2012-V1-mc-MU-20GeV/out-higgs-pythia-m120.root</file>
    </process  -->
 
-<!-- 0.08 -->
-   <process isstack="0" isdata="0"  opt="same histo" name="2 #times Heavy H^{+}[m_{H^{#pm}, #tau#nu decay} = 250 GeV/c^{2}]" color="001" width="3" fill="0" fillcolor="001" markercolor="001" line="1"  linecolor="001" linestyle="7" marker="1" >
-     <file weight="2">nomt-2012-V1-mc-MU-20GeV/out-tbh-pythia-m250.root</file>
+   <process isstack="0" isdata="0"  opt="same histo" name="H^{+}#rightarrow#tau#nu[m_{H^{#pm}} = 250 GeV/c^{2}]" color="001" width="3" fill="0" fillcolor="001" markercolor="001" line="1"  linecolor="001" linestyle="7" marker="1" >
+     <file weight="0.004273">nomt-2012-V1-mc-MU-20GeV/out-tbh-pythia-m250.root</file>
    </process>
 
-   <process isstack="0" isdata="0"  opt="same histo" name="2 #times Heavy H^{+}[m_{H^{#pm}, tb decay} = 250 GeV/c^{2}]" color="004" width="3" fill="0" fillcolor="004" markercolor="004" line="1"  linecolor="004" linestyle="7" marker="1" >
-     <file weight="10000">nomt-2012-V1-mc-MU-20GeV/out-htb-pythia-m250.root</file>
+   <process isstack="0" isdata="0"  opt="same histo" name="H^{+}#rightarrow tb [m_{H^{#pm}} = 250 GeV/c^{2}]" color="004" width="3" fill="0" fillcolor="004" markercolor="004" line="1"  linecolor="004" linestyle="7" marker="1" >
+     <file weight="0.004273">nomt-2012-V1-mc-MU-20GeV/out-htb-pythia-m250.root</file>
    </process>
+<!--
+   <process isstack="0" isdata="0"  opt="same histo" name="H^{+}#rightarrow[m_{H^{#pm}, all decays} = 250 GeV/c^{2}]" color="004" width="3" fill="0" fillcolor="004" markercolor="004" line="1"  linecolor="004" linestyle="7" marker="1" >
+     <file weight="1./234.">nomt-2012-V1-mc-MU-20GeV/out-heavyHiggs-pythia-m250.root</file>
+   </process>
+--> 
 
 </samples>

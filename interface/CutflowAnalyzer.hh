@@ -36,7 +36,7 @@ using namespace std;
 class CutflowAnalyzer : public UncertaintyCalculator, public AnalysisMonitoring, public ObjectSelector, public GenericUtils {
 public:
   
-  CutflowAnalyzer(double, bool, bool, TString, TString, TString, TString);
+  CutflowAnalyzer(double, bool, bool, TString, TString, TString, TString, vector<double>, vector<double>);
   
   void process(bool, urlCodes, TString, TString, vector<TString>&, uint);
 
@@ -62,59 +62,57 @@ private:
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-  // NEW Event analysis:
-  event::MiniEvent_t* ev_;
+/// test ///  // NEW Event analysis:
+/// test ///  event::MiniEvent_t* ev_;
   TString myKey_;
   double JER_, JES_, UNC_, BTAGUNC_, UNBTAGUNC_; // unceretainties applied
   double jer_, jes_, unc_, btagunc_, unbtagunc_; // unceretainties applied
   bool sys_;
-  JetCorrectionUncertainty* junc_;
-  std::vector<PhysicsObject> vertices_                 ;
-  std::vector<PhysicsObject> jets_without_arbitration_ ;
-  std::vector<PhysicsObject> jets_                     ;
-  std::vector<PhysicsObject> muons_                    ;
-  std::vector<PhysicsObject> electrons_                ;
-  std::vector<PhysicsObject> tausColl_                 ;
-  std::vector<PhysicsObject> taus_; 
-  PhysicsObjectCollection mets_;
-  PhysicsObject met_;
-  double metValue_;
-  vector<double> jerFactors_;
-  //  vector<double> oldJerFactorsForMet_;
-  //  vector<PhysicsObject> newJets_;
-  //  vector<PhysicsObject> oldJetsForMet_;
-  vector<int> e_init_;
-  vector<int> m_init_;
-  vector<int> j_init_;
-  vector<int> t_init_;  
-  vector<int> j_final_;
-
-  vector<int> j_init2_;
-
-  void CleanStoreObjects();
-  void eventAnalysis(bool, double, double, double, double, double); // FIXME: move TString to TString&
-  void tauDileptonSelection(bool, vector<int> &,int);
-
+  /// test ///  JetCorrectionUncertainty* junc_;
+/// test ///  std::vector<PhysicsObject> vertices_                 ;
+/// test ///  std::vector<PhysicsObject> jets_without_arbitration_ ;
+/// test ///  std::vector<PhysicsObject> jets_                     ;
+/// test ///  std::vector<PhysicsObject> muons_                    ;
+/// test ///  std::vector<PhysicsObject> electrons_                ;
+/// test ///  std::vector<PhysicsObject> tausColl_                 ;
+/// test ///  std::vector<PhysicsObject> taus_; 
+/// test ///  PhysicsObjectCollection mets_;
+/// test ///  PhysicsObject met_;
+/// test ///  double metValue_;
+/// test ///  vector<double> jerFactors_;
+/// test ///  //  vector<double> oldJerFactorsForMet_;
+/// test ///  //  vector<PhysicsObject> newJets_;
+/// test ///  //  vector<PhysicsObject> oldJetsForMet_;
+/// test ///  vector<int> e_init_;
+/// test ///  vector<int> m_init_;
+/// test ///  vector<int> j_init_;
+/// test ///  vector<int> t_init_;  
+/// test ///  vector<int> j_final_;
+/// test ///
+/// test ///  vector<int> j_init2_;
+/// test ///
+/// test ///  void CleanStoreObjects();
+/// test ///   void eventAnalysis(bool, double, double, double, double, double); // FIXME: move TString to TString&
+/// test ///   void tauDileptonSelection(bool, vector<int> &,int);
+  void eventAnalysis(bool, TString, event::MiniEvent_t*, double, double, double, double, double);
+  void tauDileptonSelection(
+			    bool,
+			    std::vector<PhysicsObject>&,
+			    std::vector<PhysicsObject>&, vector<int>&,  
+			    std::vector<PhysicsObject>&, vector<int>&,
+			    std::vector<PhysicsObject>&, vector<int>&, 
+			    std::vector<PhysicsObject>&, vector<int>&,
+			    int, JetCorrectionUncertainty*, vector<double>&, 
+			    TString, event::MiniEvent_t*,
+			    PhysicsObjectCollection&
+			    );
   
-
   // TAU DILEPTON ANALYSIS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  void tauDileptonAnalysis( bool, TString, event::MiniEvent_t*, double, double, double, double, double);
+  // FIXME: switch to const for parameters
+
   void dileptonAnalysis( bool, TString, event::MiniEvent_t*, double, double, double, double, double);
   void    wPlusJetAnalysis( TString, event::MiniEvent_t*,double, double, double, double, double);
   
-  void tauDileptonEventAnalysis(
-				bool,
-				vector<PhysicsObject>&,
-				std::vector<PhysicsObject>&, vector<int>&,  
-				std::vector<PhysicsObject>&, vector<int>&,
-				std::vector<PhysicsObject>&, vector<int>&, 
-				std::vector<PhysicsObject>&, vector<int>&, int, JetCorrectionUncertainty*, vector<double>&, 
-				TString,
-				event::MiniEvent_t*,
-				PhysicsObjectCollection&
-//				std::vector<PhysicsObject>&,
-//				vector<double>&
-				);
   
 void dileptonEventAnalysis(
 				bool,
@@ -133,7 +131,8 @@ void dileptonEventAnalysis(
 		  std::vector<PhysicsObject>&, vector<int>&,
 		  std::vector<PhysicsObject>&, vector<int>&, 
 		  std::vector<PhysicsObject>&, vector<int>&, int, JetCorrectionUncertainty*, vector<double>&, 
-		  TString
+		  TString,
+		  event::MiniEvent_t*
 		  );
   
   
@@ -156,6 +155,7 @@ void dileptonEventAnalysis(
 			      PhysicsObject&, TString, TString,
 			      PhysicsObject*,
 			      double,
+			      PhysicsObject*,
 			      PhysicsObject*,
 			      vector<int>&, vector<PhysicsObject>&, vector<double>&, double,
 			      int nbtags_taus = 0     
